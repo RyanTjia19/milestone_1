@@ -1,25 +1,3 @@
-@media print {
-
-	/* videos will not be available for printing */
-	source {
-		display: none;
-	}
-
-	iframe {
-		display: none;
-	}
-
-	/* certain pictures will not be available cause of copyright */
-	#copyright {
-		display: none;
-	}
-}
-
-/* just so that there won't be unneccesary single lines on the web */
-.single_lines {
-	width: 800px;
-}
-
 /* same image size */
 .profile {
 	width: 200px;
@@ -27,35 +5,36 @@
 	background-size: cover;
 }
 
-/* make the menu always appear on the top no matter what */
+/* make the menu always appear on the left no matter what */
 #menu {
 	background-color: #333;
 	overflow: hidden;
 	position: fixed;
-	height: 100px;
-	width: 100%;
+	height: 100%;
+	width: 200px;
+	left: 0;
 	top: 0;
 }
 
 #menu a {
-	float: left;
 	color: white;
 	display: block;
 	padding: 0px 5px;
-	font-size: 1.5vw;
+	font-size: 30px;
 	text-align: center;
 	text-decoration: none;
-	width: 10%;
-	height: 100%;
 
 	border: 1px solid gray;
 }
 
-#menu a:hover{
-	background: #ddd;
-	color: black;
+.main {
+	margin-left: 210px;
 }
 
-#basicInfo {
-	margin-top: 100px;
+#background {
+	background-image: url("../local_files/cool-background.png");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 100%;
 }

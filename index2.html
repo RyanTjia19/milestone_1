@@ -12,15 +12,30 @@
 				text-decoration: underline overline;
 			}
 
-			@media (max-width: 600px) {
-				.test {
-					background-color: red
+			@media print {
+
+				/* certain media will not be available cause of copyright */
+				#copyright {
+					display: none;
 				}
 			}
+
+			/* css to switch the frog picture */
+			.sideImage {
+				background-image: url(https://itch.io/static/images/frog-red.png);
+				float: left;
+			}
+
+			.sideImage:hover {
+				background-image: url(local_files/Frog.png);
+			}
+
 		</style>
 
 	</head>
-	<body>
+
+	<body class="main" id="background">
+
 		<div id="menu">
 			<form style="display: inline-block;" action="https://www.google.com/search?" target="_blank" method="get">
 				<input type="search" placeholder="Google Search" name="q">
@@ -41,13 +56,13 @@
 			<h1>Basic Profile</h1>
 			Name: Ryan Tjia<br>
 			Major: Computer Science<br>
-			<img class="profile" id="copyright" src="https://itch.io/static/images/frog-red.png">
+			<div id="copyright" class="profile sideImage"></div>
 			<img class="profile" src="local_files/Profile.png">
 		</div>
 
 		<div id="education">
 			<h1>Education Summary</h1>
-			<p class="single_lines">
+			<p>
 				I'm currently a senior at St. John's University and I'm working towards a bachelor degree in computer science. From my previous classes, I have learned the basics of python, html, java, sql, software design methods, networking, cryptography, etc.
 			</p>
 		</div>
@@ -73,23 +88,23 @@
 
 		<div id="generalInterests">
 			<h1>General Interests</h1>
-			<p class="single_lines">I'm mainly interested in programming, because of the desire to create stuff of which other people can use. The most recent example would be a short game that I have made (as part of a project for a course) that I have shared online.</p>
+			<p>I'm mainly interested in programming, because of the desire to create stuff of which other people can use. The most recent example would be a short game that I have made (as part of a project for a course) that I have shared online.</p>
 		</div>
 
 		<div id="songFilmShow">
 			<h1>Favorite Song, Film, Show</h1>
 			<p><span style="text-decoration:underline">Song</span><br>
-				<video width="320" height="240" controls>
+				<video id="copyright" width="320" height="240" controls>
 					<source src="local_files/Sonic Colors.MP4" type="video/MP4">
 				</video>
 			</p>
 
 			<p><span style="text-decoration:underline">Film</span><br>
-				<iframe width="320" height="240" src="https://www.youtube.com/embed/CRRlbK5w8AE"></iframe>
+				<iframe id="copyright" width="320" height="240" src="https://www.youtube.com/embed/CRRlbK5w8AE"></iframe>
 			</p>
 
 			<p><span style="text-decoration:underline">Show</span><br>
-				<iframe width="320" height="240" src="https://youtube.com/embed/HvXe5CuqqMk"></iframe>
+				<iframe id="copyright" width="320" height="240" src="https://youtube.com/embed/HvXe5CuqqMk"></iframe>
 			</p>
 		</div>
 
@@ -147,5 +162,6 @@
 			<h1>Projects</h1>
 			<p>Milestone 01 - Basic html profile page</p>
 		</div>
+
 	</body>
 </html>
