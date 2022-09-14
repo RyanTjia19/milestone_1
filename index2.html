@@ -8,6 +8,7 @@
 		<style>
 			h1 {
 				font-family: arial;
+				color: blue;
 				text-decoration: underline overline;
 			}
 
@@ -20,39 +21,38 @@
 
 	</head>
 	<body>
-		<div>
-			<h1 style="font-family: 'Times New Roman'">Menu</h1>
-			<form action="https://www.google.com/search?" target="_blank" method="get">
+		<div id="menu">
+			<form style="display: inline-block;" action="https://www.google.com/search?" target="_blank" method="get">
 				<input type="search" placeholder="Google Search" name="q">
 				<input type="submit" value="Go">
-			</form><br>
+			</form>
 
-			<a href="#basic info">Basic Info</a><br>
-			<a href="#education">Education Summary</a><br>
-			<a href="#work experience">Work Experience</a><br>
-			<a href="#programming skills">Programming Skills</a><br>
-			<a href="#general interests">General Interests</a><br>
-			<a href="#song_film_show">Favorite Song, Film, Show</a><br>
-			<a href="#website">Favorite Website</a><br>
-			<a href="#projects">Projects</a><br>
+			<a href="#basicInfo">Basic Info</a>
+			<a href="#education">Education Summary</a>
+			<a href="#workExperience">Work Experience</a>
+			<a href="#programmingSkills">Programming Skills</a>
+			<a href="#generalInterests">General Interests</a>
+			<a href="#songFilmShow">Favorite Song, Film, Show</a>
+			<a href="#website">Favorite Website</a>
+			<a href="#projects">Projects</a>
 		</div>
 
-		<div id="basic info">
+		<div id="basicInfo">
 			<h1>Basic Profile</h1>
 			Name: Ryan Tjia<br>
 			Major: Computer Science<br>
-			<img src="https://itch.io/static/images/frog-red.png" alt="HI">
-			<img src="local_files/Profile.png">
+			<img class="profile" id="copyright" src="https://itch.io/static/images/frog-red.png">
+			<img class="profile" src="local_files/Profile.png">
 		</div>
 
 		<div id="education">
 			<h1>Education Summary</h1>
-			<p>
+			<p class="single_lines">
 				I'm currently a senior at St. John's University and I'm working towards a bachelor degree in computer science. From my previous classes, I have learned the basics of python, html, java, sql, software design methods, networking, cryptography, etc.
 			</p>
 		</div>
 
-		<div id="work experience">
+		<div id="workExperience">
 			<h1>Work Experience</h1>
 			<ul>
 				<li>Volunteered at the local public library</li>
@@ -60,7 +60,7 @@
 			</ul>
 		</div>
 
-		<div id="programming skills">
+		<div id="programmingSkills">
 			<h1>Programming Skills</h1>
 			<ul>
 				<li>Python - <span style="font-weight:bold">basic</span></li>
@@ -71,12 +71,12 @@
 			</ul>
 		</div>
 
-		<div id="general interests">
+		<div id="generalInterests">
 			<h1>General Interests</h1>
-			<p>I'm mainly interested in programming, because of the desire to create stuff of which other people can use. The most recent example would be a short game that I have made (as part of a project for a course) that I have shared online.</p>
+			<p class="single_lines">I'm mainly interested in programming, because of the desire to create stuff of which other people can use. The most recent example would be a short game that I have made (as part of a project for a course) that I have shared online.</p>
 		</div>
 
-		<div id="song_film_show">
+		<div id="songFilmShow">
 			<h1>Favorite Song, Film, Show</h1>
 			<p><span style="text-decoration:underline">Song</span><br>
 				<video width="320" height="240" controls>
