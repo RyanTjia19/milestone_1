@@ -30,11 +30,3 @@
 .main {
 	margin-left: 210px;
 }
-
-#background {
-	background-image: url("../local_files/cool-background.png");
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-	height: 100%;
-}
