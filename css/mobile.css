@@ -1,37 +1,41 @@
-/* increase the fonts in the table, so that mobile users have an easier time reading it */
-
-/* change the navigation bar */
-/* will appear via button and disappear via button */
-
-/* same image size */
-.profile {
-	width: 100px;
-	height: 100px;
-	background-size: cover;
+/* remove naviagtion bar and set a fixed arrow that brings user to the top */
+#top {
+	height: 50px;
+	width: 50px;
+	background-color: cyan;
+	border: 1px solid white;
+	border-radius: 10px;
+	opacity: 0.5;
+	position: fixed;
+	right: 0%;
+	bottom: 0%;
 }
 
-/* make the menu always appear on the left no matter what */
+#top a {
+	font-size: 30px;
+	text-align: center;
+	text-decoration: none;
+	color: white;
+}
+
+/* redesign the menu */
 #menu {
 	background-color: #333;
-	overflow: hidden;
-	position: fixed;
-	height: 100%;
-	width: 200px;
-	left: 0;
-	top: 0;
+	width: 100%;
 }
 
 #menu a {
 	color: white;
 	display: block;
 	padding: 0px 5px;
-	font-size: 30px;
 	text-align: center;
 	text-decoration: none;
-
 	border: 1px solid gray;
 }
 
-.main {
-	margin-left: 210px;
+/* same image size */
+.profile {
+	width: 100px;
+	height: 100px;
+	background-size: cover;
 }
