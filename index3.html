@@ -19,6 +19,7 @@
 				font-family: arial;
 				color: blue;
 				text-decoration: underline overline;
+				margin-top: 20px;
 			}
 
 			@media print {
@@ -27,16 +28,6 @@
 				#copyright {
 					display: none;
 				}
-			}
-
-			/* css to switch the frog picture */
-			.sideImage {
-				background-image: url(https://itch.io/static/images/frog-red.png);
-				float: left;
-			}
-
-			.sideImage:hover {
-				background-image: url(local_files/Frog.png);
 			}
 
 			/* background */
@@ -54,7 +45,7 @@
 			}
 
 			.profile {
-				width: 300px;
+				width: 250px;
 			}
 
 		</style>
@@ -63,161 +54,216 @@
 
 	<body id="background">
 
-		<button data-toggle="collapse" data-target="#navigation" style="position:fixed;">=</button>
+		<button data-toggle="collapse" data-target="#navigation" style="position:fixed; opacity: 75%">=</button>
 		
-		<div id="navigation" class="collapse">
-			<nav class="navbar navbar-expand-lg bg-dark navbar-dark justify-content-center fixed-top">
-				<ul class="navbar-nav">
-				    <li class="nav-item">
-				      <a class="nav-link" href="#basicInfo">Basic Info</a>
-				    </li>
-				    <li class="nav-item">
-				      <a class="nav-link" href="#education">Education Summary</a>
-				    </li>
-				    <li class="nav-item">
-				      <a class="nav-link" href="#workExperience">Work Experience</a>
-					</li>
-					<li class="nav-item">
-				      <a class="nav-link" href="#programmingSkills">Programming Skills</a>
-					</li>
-					<li class="nav-item">
-				      <a class="nav-link" href="#generalInterests">General Interests</a>
-					</li>
-					<li class="nav-item">
-				      <a class="nav-link" href="#songFilmShow">Favorite Song, Film, Show</a>
-					</li>
-					<li class="nav-item">
-				      <a class="nav-link" href="#website">Favorite Website</a>
-					</li>
-					<li class="nav-item">
-				      <a class="nav-link" href="#projects">Projects</a>
-					</li>
+		<div id="navigation" class="container collapse">
+			<div class="row">
+				<nav class="navbar navbar-expand-lg bg-dark navbar-dark justify-content-center fixed-top">
+					<ul class="navbar-nav">
+					    <li class="nav-item">
+					      <a class="nav-link" href="#basicInfo">Basic Info</a>
+					    </li>
+					    <li class="nav-item">
+					      <a class="nav-link" href="#education">Education Summary</a>
+					    </li>
+					    <li class="nav-item">
+					      <a class="nav-link" href="#workExperience">Work Experience</a>
+						</li>
+						<li class="nav-item">
+					      <a class="nav-link" href="#programmingSkills">Programming Skills</a>
+						</li>
+						<li class="nav-item">
+					      <a class="nav-link" href="#generalInterests">General Interests</a>
+						</li>
+						<li class="nav-item">
+					      <a class="nav-link" href="#songFilmShow">Favorite Song, Film, Show</a>
+						</li>
+						<li class="nav-item">
+					      <a class="nav-link" href="#website">Favorite Website</a>
+						</li>
+						<li class="nav-item">
+					      <a class="nav-link" href="#projects">Projects</a>
+						</li>
 
-					<form class="form-inline" action="https://www.google.com/search?" target="_blank" method="get">
-						<input type="search" placeholder="Google Search" name="q">
-						<input type="submit" value="Go">
-					</form>
-				</ul>
-			</nav>
+						<form class="form-inline" action="https://www.google.com/search?" target="_blank" method="get">
+							<input type="search" placeholder="Google Search" name="q">
+							<input type="submit" value="Go">
+						</form>
+					</ul>
+				</nav>
+			</div>
+			<div class="row fixed-top">
+				<div class="col-lg-1">
+					<button data-toggle="collapse" data-target="#navigation">X</button>
+				</div>
+			</div>
 		</div>
 
-		<div id="basicInfo">
-			<h1>Basic Profile</h1>
-			Name: Ryan Tjia<br>
-			Major: Computer Science<br>
-			<div class="row">
-				<div class="col-lg-3"></div>
-				<div class="col-lg-3" style="background-color:lavender;">
-					<img class="profile sideImage img-fluid mx-auto d-block" src="https://itch.io/static/images/frog-red.png">
+		<div class="container-fluid" id="basicInfo">
+			<div class="row justify-content-center">
+				<h1>Basic Profile</h1>
+			</div>
+			<div class="row justify-content-center">
+				<b>Name:</b> Ryan Tjia
+			</div>
+			<div class="row justify-content-center">
+				<b>Major:</b> Computer Science
+			</div>
+
+			<div class="row justify-content-center">
+				<div id="copyright" class="col-lg-3">
+					<img class="profile img-fluid mx-auto d-block" src="https://itch.io/static/images/frog-red.png">
 				</div>
-				<div class="col-lg-3" style="background-color:orange;">
+				<div class="col-lg-3">
 					<img class="profile img-fluid mx-auto d-block" src="local_files/Profile.png">
 				</div>
 			</div>
 		</div>
 
-		<div id="education">
-			<h1>Education Summary</h1>
-			<p>
-				I'm currently a senior at St. John's University and I'm working towards a bachelor degree in computer science. From my previous classes, I have learned the basics of python, html, java, sql, software design methods, networking, cryptography, etc.
-			</p>
+		<div class="container-fluid" id="education">
+			<div class="row justify-content-center">
+				<h1>Education Summary</h1>
+			</div>
+			<div class="row justify-content-center">
+				<div class="col-lg-6">
+					<p>
+						I'm currently a senior at St. John's University and I'm working towards a bachelor degree in computer science. From my previous classes, I have learned the basics of python, html, java, sql, software design methods, networking, cryptography, etc.
+					</p>
+				</div>
+			</div>
 		</div>
 
-		<div id="workExperience">
-			<h1>Work Experience</h1>
-			<ul>
-				<li>Volunteered at the local public library</li>
-				<li>Used Unity engine to create 3 basic games</li>
-			</ul>
+		<div class="container-fluid" id="workExperience">
+			<div class="row justify-content-center">
+				<h1>Work Experience</h1>
+			</div>
+			<div class="row justify-content-center">
+				<ul>
+					<li>Volunteered at the local public library</li>
+					<li>Used Unity engine to create 3 basic games</li>
+				</ul>
+			</div>
 		</div>
 
-		<div id="programmingSkills">
-			<h1>Programming Skills</h1>
-			<ul>
-				<li>Python - <span style="font-weight:bold">basic</span></li>
-				<li>Java - <span style="font-weight:bold">basic</span></li>
-				<li>C# - <span style="font-weight:bold">basic</span></li>
-				<li>HTML - <span style="font-weight:bold">beginner</span></li>
-				<li>Lua - <span style="font-weight:bold">beginner</span></li>
-			</ul>
+		<div class="container-fluid" id="programmingSkills">
+			<div class="row justify-content-center">
+				<h1>Programming Skills</h1>
+			</div>
+			<div class="row justify-content-center">
+				<ul>
+					<li>Python - <span style="font-weight:bold">basic</span></li>
+					<li>Java - <span style="font-weight:bold">basic</span></li>
+					<li>C# - <span style="font-weight:bold">basic</span></li>
+					<li>HTML - <span style="font-weight:bold">beginner</span></li>
+					<li>Lua - <span style="font-weight:bold">beginner</span></li>
+				</ul>
+			</div>
 		</div>
 
-		<div id="generalInterests">
-			<h1>General Interests</h1>
-			<p>I'm mainly interested in programming, because of the desire to create stuff of which other people can use. The most recent example would be a short game that I have made (as part of a project for a course) that I have shared online.</p>
+		<div class="container-fluid" id="generalInterests">
+			<div class="row justify-content-center">
+				<h1>General Interests</h1>
+			</div>
+			<div class="row justify-content-center">
+				<div class="col-lg-6">
+					<p>
+						I'm mainly interested in programming, because of the desire to create stuff of which other people can use. The most recent example would be a short game that I have made (as part of a project for a course) that I have shared online.
+					</p>
+				</div>
+			</div>
 		</div>
 
-		<div id="songFilmShow">
-			<h1>Favorite Song, Film, Show</h1>
-			<p><span style="text-decoration:underline">Song</span><br>
-				<video id="copyright" width="320" height="240" controls>
-					<source src="local_files/Sonic Colors.MP4" type="video/MP4">
-				</video>
-			</p>
-
-			<p><span style="text-decoration:underline">Film</span><br>
-				<iframe id="copyright" width="320" height="240" src="https://www.youtube.com/embed/CRRlbK5w8AE"></iframe>
-			</p>
-
-			<p><span style="text-decoration:underline">Show</span><br>
-				<iframe id="copyright" width="320" height="240" src="https://youtube.com/embed/HvXe5CuqqMk"></iframe>
-			</p>
+		<div class="container-fluid" id="songFilmShow">
+			<div class="row justify-content-center">
+				<h1>Favorite Song, Film, Show</h1>
+			</div>
+			<div class="row justify-content-center">
+				<div class="col-lg-4">
+					<span style="text-decoration:underline">Song</span>
+					<div>
+						<video id="copyright" width="320" height="240" controls>
+							<source src="local_files/Sonic Colors.MP4" type="video/MP4">
+						</video>
+					</div>
+				</div>
+				<div class="col-lg-4">
+					<span style="text-decoration:underline">Film</span><br>
+					<iframe id="copyright" width="320" height="240" src="https://www.youtube.com/embed/CRRlbK5w8AE"></iframe>
+				</div>
+				<div class="col-lg-4">
+					<span style="text-decoration:underline">Show</span><br>
+					<iframe id="copyright" width="320" height="240" src="https://youtube.com/embed/HvXe5CuqqMk"></iframe>
+				</div>
+			</div>
 		</div>
 
-		<div id="website" class="test">
-			<h1>Favorite Website</h1>
-			<table>
-				<tr>
-					<th>Link</th>
-					<th>Descriptions</th>
-				</tr>
-				<tr>
-					<td><a href="https://www.fandom.com" target="_blank">Fandom</a></td>
-					<td>
-						<p>
-							-This website is a place where you can find a community of people with similar interest.
-						</p>
-					</td>
-				</tr>
-				<tr>
-					<td><a href="https://discord.com" target="_blank">Discord</a></td>
-					<td>
-						<p>
-							-This website is a place where you talk and hang out with people online.
-						</p>
-					</td>
-				</tr>
-				<tr>
-					<td><a href="https://www.youtube.com" target="_blank">Youtube</a></td>
-					<td>
-						<p>
-							-This website lets you watch videos.
-						</p>
-					</td>
-				</tr>
-				<tr>
-					<td><a href="https://stackoverflow.com" target="_blank">StackOverFlow</a></td>
-					<td>
-						<p>
-							-This website is a place where you can questions and other people can help you.
-						</p>
-					</td>
-				</tr>
-				<tr>
-					<td><a href="https://www.w3schools.com" target="_blank">W3Schools</a></td>
-					<td>
-						<p>
-							-This website shows information related programming languages such as html.
-						</p>
-					</td>
-				</tr>
-			</table>
+		<div class="container-fluid" id="website" class="test">
+			<div class="row justify-content-center">
+				<h1>Favorite Website</h1>
+			</div>
+			<div class="row justify-content-center">
+				<table>
+					<tr>
+						<th>Link</th>
+						<th>Descriptions</th>
+					</tr>
+					<tr>
+						<td><a href="https://www.fandom.com" target="_blank">Fandom</a></td>
+						<td>
+							<p>
+								-This website is a place where you can find a community of people with similar interest.
+							</p>
+						</td>
+					</tr>
+					<tr>
+						<td><a href="https://discord.com" target="_blank">Discord</a></td>
+						<td>
+							<p>
+								-This website is a place where you talk and hang out with people online.
+							</p>
+						</td>
+					</tr>
+					<tr>
+						<td><a href="https://www.youtube.com" target="_blank">Youtube</a></td>
+						<td>
+							<p>
+								-This website lets you watch videos.
+							</p>
+						</td>
+					</tr>
+					<tr>
+						<td><a href="https://stackoverflow.com" target="_blank">StackOverFlow</a></td>
+						<td>
+							<p>
+								-This website is a place where you can questions and other people can help you.
+							</p>
+						</td>
+					</tr>
+					<tr>
+						<td><a href="https://www.w3schools.com" target="_blank">W3Schools</a></td>
+						<td>
+							<p>
+								-This website shows information related programming languages such as html.
+							</p>
+						</td>
+					</tr>
+				</table>
+			</div>
 		</div>
 
-		<div id="projects">
-			<h1>Projects</h1>
-			<p>Milestone 01 - Basic html profile page</p>
-			<p style="font-family: brush script mt; font-size: 20px">Milestone 02 - Profile page with CSS</p>
+		<div class="container-fluid" id="projects">
+			<div class="row justify-content-center">
+				<h1>Projects</h1>
+			</div>
+			<div class="row justify-content-center">
+				<p>Milestone 01 - Basic html profile page</p>
+			</div>
+			<div class="row justify-content-center">
+				<p style="font-family: brush script mt; font-size: 20px">Milestone 02 - Profile page with CSS</p>
+			</div>
+			<div class="row justify-content-center">
+				<p>Milestone 03 - Profile page with BootStrap as well</p>
+			</div>
 		</div>
 
 	</body>
