@@ -1,3 +1,8 @@
+//Different list to add the task to
+var lowTasks = [];
+var medTasks = [];
+var highTasks = [];
+
 //Dictionary to keep track of the amount of pending tasks
 const dictionary = {'high' : 0, 'med' : 0, 'low' : 0};
 
@@ -26,6 +31,27 @@ window.onload = function() {
 
 			//Remove the parent element, which also remove the button clicked
 			taskElement.remove();
+
+			//Remove the task from the respective array as well
+			//This is done by adding tasks that are not to be removed onto
+			//the empty array that has the same name as the old array
+			if (parentList == 'high') {
+				highTasks = highTasks.filter(object => {
+					return object.Title !== taskElement.children[0].innerHTML;
+				})
+			}
+
+			else if (parentList == 'med') {
+				medTasks = medTasks.filter(object => {
+					return object.Title !== taskElement.children[0].innerHTML;
+				})
+			}
+
+			else if (parentList == 'low') {
+				lowTasks = lowTasks.filter(object => {
+					return object.Title !== taskElement.children[0].innerHTML;
+				})
+			}
 
 			//Updates the count, but if it's already completed then don't
 			//update count
@@ -57,34 +83,42 @@ window.onload = function() {
 			dictionary[parentList] = dictionary[parentList] - 1;
 			document.getElementById(`${parentList}-title`).innerHTML =
 				dictionary[parentList];
+
+			//Moves the recently completed task to the bottom of the respective 'ul'
+			document.getElementById(parentList).appendChild(taskElement.parentElement);
 		}
 	})
 }
 
 function AddTask() {
 
+	//Creates an object for the new task
+	const newTask = new Object();
+
 	//Gets the correct value
-	taskTitle = document.getElementById("title").value;
-	taskDesc = document.getElementById("desc").value;
+	newTask.Title = document.getElementById("title").value;
+	newTask.Desc = document.getElementById("desc").value;
 
 	//Default value
-	taskPriority = '';
+	newTask.Priority = '';
 
 	//Finding the checked value
 	priority = document.getElementsByName("priority");
 	for (var button of priority) {
 		if (button.checked) {
-			taskPriority = button.value;
+			newTask.Priority = button.value;
 		}
 	}
 
 	//Lets the user know that they must pick a priority
-	if (taskPriority == '') {
+	if (newTask.Priority == '') {
 		alert("Must pick a priority");
 	}
 
 	//Adds the new task
 	else {
+
+		//Resets the inputs
 		document.getElementById("title").value = '';
 		document.getElementById("desc").value = '';
 		
@@ -92,30 +126,47 @@ function AddTask() {
 			button.checked = false;
 		}
 
+		//Adds the task to the respective array
+		//Did not use the '===' operator as it is already
+		//known that the value will always be a string
+		if (newTask.Priority == 'high') {
+			highTasks.push(newTask);
+		}
+
+		else if (newTask.Priority == 'med') {
+			medTasks.push(newTask);
+		}
+
+		else if (newTask.Priority == 'low') {
+			lowTasks.push(newTask);
+		}
+
 		//Creates a new element of type "li"
 		const child = document.createElement("li");
 
 		//Adds the button along with the title of the task
-		newTask = `<span>${taskTitle}</span>
+		Task = `<span>${newTask.Title}</span>
 					<span> - </span>
 					<span><i>pending</i></span>
 					<button class="complete">Complete</button>
 					<button class="remove">Remove</button>
-					<button data-toggle="collapse" data-target=#w${taskNumber}>
+					<button id="collapsable" data-toggle="collapse" data-target=#w${taskNumber}>
 					...
 					</button>
-					<div class="collapse" id=w${taskNumber}>${taskDesc}</div>`;
+					<div class="collapse list-desc" id=w${taskNumber}>${newTask.Desc}</div>`;
 
-		child.innerHTML = newTask;
+		child.innerHTML = Task;
 
 		//Adds this new element onto the 'ul', depending on its priority
-		document.getElementById(taskPriority).appendChild(child);
+		//Puts it at the top of the list since it's recently added
+		const ulList = document.getElementById(newTask.Priority);
+		ulList.insertBefore(child, ulList.firstChild);
 
 		//Updates the count
-		dictionary[taskPriority] = dictionary[taskPriority] + 1;
+		dictionary[newTask.Priority] = dictionary[newTask.Priority] + 1;
 		taskNumber = taskNumber + 1;
-		document.getElementById(`${taskPriority}-title`).innerHTML =
-			dictionary[taskPriority];
+		document.getElementById(`${newTask.Priority}-title`).innerHTML =
+			dictionary[newTask.Priority];
 	}
 
 	return false;
